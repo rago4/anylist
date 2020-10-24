@@ -1,0 +1,174 @@
+$ff-system-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$c-mine-shaft: #333;
+$c-comet: #57617c;
+$c-white: #fff;
+$c-periwinkle: #bbcbff;
+$c-blueribbon: #003fff;
+$c-biscay: #1f376c;
+$c-froly: #f27474;
+$outline-shadow: 0 0 0 0.2em rgba($c-blueribbon, 0.3);
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  margin: 0;
+  font-family: $ff-system-ui;
+  color: $c-comet;
+}
+
+input,
+button {
+  font-family: $ff-system-ui;
+  color: $c-comet;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 50em;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.brand {
+  margin: 0 0 0.75em;
+
+  &__emoji {
+    margin-right: 0.25em;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 0.6em 1em;
+  border-radius: 5px;
+  border: 1px solid rgba($c-mine-shaft, 0.2);
+  box-shadow: 0 0.125em 0.25em 0 rgba($c-mine-shaft, 0.05);
+  outline: 0;
+
+  &:focus {
+    border-color: $c-periwinkle;
+  }
+
+  &::placeholder {
+    color: lighten($c-comet, 30%);
+  }
+}
+
+.button {
+  border: none;
+  padding: 0.65em 1em;
+  cursor: pointer;
+  font-weight: 600;
+  color: $c-white;
+  background-color: $c-blueribbon;
+  border-radius: 8px;
+  box-shadow: 0 0.15em 0.375em 0 rgba($c-biscay, 0.1);
+  outline: 0;
+
+  &--danger {
+    color: $c-froly;
+    background-color: rgba($c-froly, 0.1);
+  }
+
+  &--secondary {
+    color: $c-blueribbon;
+    background-color: rgba($c-blueribbon, 0.1);
+  }
+
+  &:focus {
+    box-shadow: $outline-shadow;
+  }
+}
+
+.add-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+
+  &__input {
+    margin-right: 0.5em;
+  }
+}
+
+.shoplist {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75em;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid rgba($c-mine-shaft, 0.1);
+    box-shadow: 0 0.125em 0.5em 0 rgba($c-mine-shaft, 0.05);
+    background-color: $c-white;
+    outline: 0;
+
+    &:focus {
+      box-shadow: $outline-shadow;
+    }
+  }
+
+  &__checkbox-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__checkbox-styled {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    border-radius: 4px;
+    margin-right: 0.5em;
+    border: 1px solid rgba($c-comet, 0.3);
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  &__check-icon {
+    flex-shrink: 0;
+    width: 0.75em;
+    height: 0.75em;
+    color: $c-white;
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked ~ .shoplist__checkbox-styled {
+      background-color: $c-blueribbon;
+      border-color: transparent;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  &__button {
+    padding: 0;
+    width: 2em;
+    height: 2em;
+    margin-left: 0.5em;
+  }
+
+  &__icon {
+    width: 1em;
+    height: 1em;
+  }
+}
