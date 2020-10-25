@@ -11,6 +11,6 @@ Built with Parcel and React.
 
 ## Live demo
 
-You can see it in action here 👉 https://anylist.netlify.com/
+You can see it in action here 👉 https://anylist.netlify.app/
 
 ![Anylist app demo](https://thumbs.gfycat.com/AgitatedMeaslyAdeliepenguin-small.gif)
