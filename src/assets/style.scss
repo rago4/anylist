@@ -8,6 +8,7 @@ $c-blueribbon: #003fff;
 $c-biscay: #1f376c;
 $c-froly: #f27474;
 $outline-shadow: 0 0 0 0.2em rgba($c-blueribbon, 0.3);
+$container-width: 50em;
 
 html {
   font-size: 16px;
@@ -18,6 +19,7 @@ body {
   margin: 0;
   font-family: $ff-system-ui;
   color: $c-comet;
+  padding-bottom: calc(38px + 1em);
 }
 
 input,
@@ -29,10 +31,10 @@ button {
 }
 
 .container {
-  max-width: 50em;
+  max-width: $container-width;
   width: 100%;
   margin: 0 auto;
-  padding: 1em;
+  padding: 1em 1em 0;
   box-sizing: border-box;
 }
 
@@ -74,12 +76,12 @@ button {
 
   &--danger {
     color: $c-froly;
-    background-color: rgba($c-froly, 0.1);
+    background-color: lighten($c-froly, 25);
   }
 
   &--secondary {
     color: $c-blueribbon;
-    background-color: rgba($c-blueribbon, 0.1);
+    background-color: lighten($c-blueribbon, 45);
   }
 
   &:focus {
@@ -171,4 +173,13 @@ button {
     width: 1em;
     height: 1em;
   }
+}
+
+.clear-all {
+  max-width: calc(#{$container-width} - 2em);
+  width: calc(100% - 2em);
+  position: fixed;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
 }

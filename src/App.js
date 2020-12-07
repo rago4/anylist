@@ -3,8 +3,9 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import Brand from "./components/Brand";
 import AddForm from "./components/AddForm";
 import Item from "./components/Item";
-import { areArraysEqual, usePrevious } from "./utils";
+import { areArraysEqual } from "./utils";
 import { LOCAL_STORAGE_KEYS } from "./constants";
+import { usePrevious } from "./hooks/usePrevious";
 
 const App = () => {
   const [items, setItems] = useState(
@@ -71,6 +72,10 @@ const App = () => {
     setItems(newItems);
   };
 
+  const handleClear = () => {
+    setItems([]);
+  };
+
   return (
     <>
       <Brand />
@@ -103,6 +108,12 @@ const App = () => {
               </ul>
             )}
           </Droppable>
+          <button
+            className="button button--danger clear-all"
+            onClick={handleClear}
+          >
+            Clear all items
+          </button>
         </DragDropContext>
       )}
     </>
